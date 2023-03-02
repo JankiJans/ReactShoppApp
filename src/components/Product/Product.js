@@ -29,20 +29,11 @@ const Product = (props) => {
           <div className={styles.sizes}>
             <h3 className={styles.optionLabel}>Sizes</h3>
             <ul className={styles.choices}>
-              <li>
-                <button type="button" className={styles.active}>
-                  S
-                </button>
-              </li>
-              <li>
-                <button type="button">M</button>
-              </li>
-              <li>
-                <button type="button">L</button>
-              </li>
-              <li>
-                <button type="button">XL</button>
-              </li>
+              {props.sizes.map((size) => (
+                <li key={size}>
+                  <button type="button" className={clsx(styles.size, size.name === currentSize && styles.active)} onClick = {(e) => {e.preventDefault(); setCurrentSize(size.name);}}>{size.name}</button>
+                </li>
+              ))}
             </ul>
           </div>
           <div className={styles.colors}>
@@ -64,9 +55,6 @@ const Product = (props) => {
   );
 };
 
-{
-  /* <li><button type="button" className={clsx(styles.colorBlack,styles.active )} /></li> */
-}
 
 Product.propTypes = {
   id: PropTypes.number.isRequired,
