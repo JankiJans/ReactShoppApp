@@ -50,7 +50,7 @@ const Product = (props) => {
             <ul className={styles.choices}>
               {props.colors.map((item) => (
                 <li key={item}>
-                  <button type="button" className={clsx(prepareColorClassName(item), item === item && styles.active)} />
+                  <button type="button" className={clsx(prepareColorClassName(item), item === item && styles.active)} onClick = {(e) => {e.preventDefault(); setCurrentColor(item);}}></button>
                 </li>
               ))}
             </ul>
