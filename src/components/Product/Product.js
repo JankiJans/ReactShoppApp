@@ -20,7 +20,7 @@ const Product = (props) => {
           className={styles.image}
           alt={`${props.title} - ${currentColor} - ${currentSize}`}
           size={currentSize}
-          src={`${process.env.PUBLIC_URL}/images/products/shirt-kodilla--${currentColor}.jpg` } />
+          src={`${process.env.PUBLIC_URL}/images/products/shirt-${props.name}--${currentColor}.jpg` } />
       </div>
       <div>
         <header>
