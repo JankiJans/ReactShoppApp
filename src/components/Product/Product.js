@@ -7,7 +7,7 @@ import { useState } from 'react';
 const Product = (props) => {
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
-  const [currentPrice, setCurrentPrice] = useState(props.basePrice + props.sizes[0].additionalPrice);
+  const [currentPrice, setCurrentPrice] = useState(props.sizes[0].additionalPrice);
 
   console.log('currentColor: ', currentColor);
   console.log('currentSize: ', currentSize);
@@ -52,7 +52,7 @@ const Product = (props) => {
               ))}
             </ul>
           </div>
-          <Button className={styles.button}>
+          <Button className={styles.button} onClick={() => {console.log("Name")}}>
             <span className="fa fa-shopping-cart" />
           </Button>
         </form>
