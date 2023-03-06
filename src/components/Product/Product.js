@@ -29,7 +29,7 @@ const Product = (props) => {
     'Name:', props.title,
     'Color:', currentColor,
     'Size:', currentSize,
-    'price:', finalPrice()
+    'price:', finalPrice
     );
   };
 
