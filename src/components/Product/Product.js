@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import ProductImage from '../ProductImage/ProductImage';
 import OptionsForm from '../OptionsForm/OptionsForm';
+import { useMemo } from 'react';
 
 
 const Product = (props) => {
@@ -18,13 +19,16 @@ const Product = (props) => {
     return props.basePrice + currentPrice;
   };
 
+  const finalPrice = useMemo(() => getPrice(), [currentPrice]);
+
+
   const Summary = (e) => {
     e.preventDefault();
     console.log('=== Summary ===',
     'Name:', props.title,
     'Color:', currentColor,
     'Size:', currentSize,
-    'price:', getPrice()
+    'price:', finalPrice()
     );
   };
 
