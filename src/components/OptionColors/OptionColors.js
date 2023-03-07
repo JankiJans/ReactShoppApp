@@ -12,7 +12,7 @@ const OptionColors = (props) => {
     <div className={styles.colors}>
       <h3 className={styles.optionLabel}>Colors</h3>
       <ul className={styles.choices}>
-        {props.colors.map((item) => (
+        {props.colors.map((item) => ( console.log(item),
           <li key={item}>
             <button
               type="button"

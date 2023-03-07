@@ -20,7 +20,7 @@ const Product = (props) => {
 
   };
 
-  const finalPrice = useMemo(() => getPrice(), [currentPrice]);
+  const finalPrice = useMemo(getPrice, [currentPrice, props.basePrice]);
 
 
   const Summary = (e) => {

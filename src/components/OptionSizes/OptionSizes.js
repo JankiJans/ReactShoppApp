@@ -1,14 +1,15 @@
 import styles from './OptionSizes.module.scss';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 
 const OptionSizes = (props) => {
   return (
     <div className={styles.sizes}>
       <h3 className={styles.optionLabel}>Sizes</h3>
       <ul className={styles.choices}>
-        {props.sizes.map((size, index) => (
-          <li key={`${size}-${index}`}>
+        {props.sizes.map((size) => ( console.log(size),
+          <li key={shortid()}>
             <button
               type="button"
               className={clsx(styles.size, size.name === props.currentSize && styles.active)}
@@ -20,7 +21,7 @@ const OptionSizes = (props) => {
             >
               {size.name}
             </button>
-          </li>
+          </li>         
         ))}
       </ul>
     </div>
